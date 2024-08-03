@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
 import { RootLayoutProps } from "@/@types/root-layout";
+import { Navbar } from "@/components/navbar";
 import { generateSEO } from "@/utils/generate-seo";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -16,6 +17,7 @@ export default function RootLayout(props: RootLayoutProps) {
   return (
     <html lang="pt-BR">
       <body className={`bg-white text-placeholder ${poppins.className}`}>
+        <Navbar />
         {children}
       </body>
     </html>
