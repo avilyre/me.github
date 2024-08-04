@@ -1,5 +1,11 @@
+import { Fragment } from "react";
+
 import { DisplaySearch } from "@/components/display-search";
 
 export default function Home() {
-  return <DisplaySearch.Idle />;
+  return (
+    <Fragment>
+      <DisplaySearch.Idle />
+    </Fragment>
+  );
 }
