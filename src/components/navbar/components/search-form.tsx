@@ -22,7 +22,7 @@ export const SearchForm = () => {
           onChange={event => setSearch(event.target.value)}
         />
         <button type="submit" className="px-4">
-          <FontAwesomeIcon className="w-6" icon={faMagnifyingGlass} />
+          <FontAwesomeIcon className="h-6 w-6" icon={faMagnifyingGlass} />
         </button>
       </label>
     </form>

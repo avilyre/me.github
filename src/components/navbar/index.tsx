@@ -11,7 +11,7 @@ export const Navbar = () => {
         className="flex items-center gap-2 bg-primary px-6 py-[29.37px] text-sm font-medium text-white transition-all hover:brightness-90 hover:filter"
         href="#"
       >
-        <FontAwesomeIcon className="w-6" icon={faHeart} />
+        <FontAwesomeIcon className="h-6 w-6" icon={faHeart} />
         Favoritos
       </a>
     </nav>
