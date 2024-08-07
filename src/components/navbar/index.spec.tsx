@@ -1,9 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import { beforeAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it, vi } from "vitest";
 
 import { Navbar } from ".";
 
 describe("Navbar", () => {
+  vi.mock("next/navigation", () => ({
+    useRouter: () => vi.fn(),
+  }));
+
   beforeAll(() => {
     render(<Navbar />);
   });

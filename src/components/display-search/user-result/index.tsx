@@ -8,10 +8,10 @@ export const UserResult = (props: UserResultProps) => {
 
   return (
     <div className="grid grid-cols-[448px_1fr] gap-12 p-6">
-      <div className="flex-1">
+      <div>
         <UserProfile user={profile.user} />
       </div>
-      <div className="flex-1">
+      <div>
         <h1 className="mb-4 text-xl font-semibold text-primary">
           Repositórios
         </h1>
