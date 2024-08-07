@@ -16,9 +16,9 @@ export const Repository = (props: RepositoryProps) => {
         <p className="text-sm text-placeholder">{description}</p>
         <footer className="mt-4 flex items-center gap-6">
           {languages.map(language => {
-            const { color, name } = getLanguage(language);
+            const lang = getLanguage(language);
 
-            if (!color) return null;
+            if (lang === null) return null;
 
             return (
               <div
@@ -29,10 +29,10 @@ export const Repository = (props: RepositoryProps) => {
                 <div
                   className="h-4 w-4 rounded-full"
                   style={{
-                    backgroundColor: color,
+                    backgroundColor: lang.color,
                   }}
                 ></div>
-                <span className="text-xs text-neutral">{name}</span>
+                <span className="text-xs text-neutral">{lang.name}</span>
               </div>
             );
           })}
