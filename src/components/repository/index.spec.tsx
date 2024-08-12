@@ -7,7 +7,7 @@ const repositoryProperties = {
   name: "Repository name",
   description: "Repository description",
   languages: ["TypeScript", "JavaScript", "CSS", "HTML"],
-  updatedAt: new Date(),
+  updatedAt: new Date("2024-08-06:12:00:00"),
 };
 
 describe("Repository", () => {

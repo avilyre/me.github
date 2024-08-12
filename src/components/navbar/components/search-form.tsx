@@ -25,7 +25,7 @@ export const SearchForm = () => {
           className="px-4 py-[10px] text-sm md:min-w-[668px]"
           onChange={event => setSearch(event.target.value)}
         />
-        <button type="submit" className="px-4">
+        <button type="submit" className="px-4 leading-none">
           <FontAwesomeIcon className="h-6 w-6" icon={faMagnifyingGlass} />
         </button>
       </label>
