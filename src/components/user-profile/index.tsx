@@ -16,6 +16,7 @@ export const UserProfile = (props: UserProfileProps) => {
         alt="Avatar do usuário"
         width={200}
         height={200}
+        priority
       />
       <h1 className="text-xl font-semibold text-neutral">{user.name}</h1>
       <span className="text-sm text-gray-dark">@{user.username}</span>
