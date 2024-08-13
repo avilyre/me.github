@@ -5,7 +5,7 @@ import { FavoriteButton } from "../favorite-button";
 import { RepositoryProps } from "./interface";
 
 export const Repository = (props: RepositoryProps) => {
-  const { name, description, languages, updatedAt } = props;
+  const { name, description, languages, updatedAt, isFavorited } = props;
 
   const formattedUpdatedAt = formatDate(updatedAt);
 
@@ -41,7 +41,7 @@ export const Repository = (props: RepositoryProps) => {
           </time>
         </footer>
       </div>
-      <FavoriteButton isFavorited={true} />
+      <FavoriteButton isFavorited={isFavorited || false} />
     </article>
   );
 };

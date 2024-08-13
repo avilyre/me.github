@@ -3,4 +3,5 @@ export interface RepositoryProps {
   description: string;
   languages: string[];
   updatedAt: Date;
+  isFavorited?: boolean;
 }

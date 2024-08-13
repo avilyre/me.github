@@ -8,6 +8,7 @@ const repositoryProperties = {
   description: "Repository description",
   languages: ["TypeScript", "JavaScript", "CSS", "HTML"],
   updatedAt: new Date("2024-08-06:12:00:00"),
+  isFavorited: true,
 };
 
 describe("Repository", () => {
@@ -59,6 +60,7 @@ describe("Repository", () => {
   it("should be able to render with a favorite button with TRUE state", async () => {
     const screen = render(<Repository {...repositoryProperties} />);
     const favoriteButton = await screen.findByTestId("favorite-button");
+
     expect(favoriteButton).toBeInTheDocument();
     expect(favoriteButton).toHaveAttribute("aria-label", "Desfavoritar");
   });
