@@ -17,7 +17,14 @@ export const UserResult = (props: UserResultProps) => {
         </h1>
         <div className="flex flex-1 flex-col gap-4">
           {repositories.map(repository => (
-            <Repository key={repository.name} {...repository} />
+            <Repository
+              key={repository.name}
+              name={repository.name}
+              description={repository.description}
+              languages={repository.languages}
+              updatedAt={repository.updatedAt}
+              isFavorited={true}
+            />
           ))}
         </div>
       </div>
