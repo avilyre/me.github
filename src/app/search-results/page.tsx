@@ -1,10 +1,11 @@
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 import { redirect } from "next/navigation";
-import { Fragment } from "react";
 
-import { DisplaySearch } from "@/components/display-search";
-import { getRepositories } from "@/services/get-repositories";
-import { getUser } from "@/services/get-user";
-
+import { UserWithReporitoriesList } from "./components/user-with-repositories-list";
 import { PageProps } from "./interface";
 
 export default async function SearchResults(props: PageProps) {
@@ -12,25 +13,11 @@ export default async function SearchResults(props: PageProps) {
 
   if (!query) redirect("/");
 
-  const { user, status: userStatus } = await getUser(query);
-
-  if (userStatus === 404) redirect(`/without-results?query=${query}`);
-
-  const { repositories } = await getRepositories(query);
+  const queryClient = new QueryClient();
 
   return (
-    <Fragment>
-      <DisplaySearch.UserResult
-        profile={{
-          user: {
-            name: user.name,
-            username: user.login,
-            avatarURL: user.avatar_url,
-            description: user.bio,
-          },
-        }}
-        repositories={repositories}
-      />
-    </Fragment>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <UserWithReporitoriesList query={query} />
+    </HydrationBoundary>
   );
 }

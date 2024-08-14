@@ -12,7 +12,7 @@ export const getRepositories = async (
       `https://api.github.com/users/${userQuery}/repos`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
         },
       },
     );
