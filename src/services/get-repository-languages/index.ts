@@ -11,7 +11,7 @@ export const getRepositoryLanguages = async (
       `https://api.github.com/repos/${userQuery}/${repositoryName}/languages`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
         },
       },
     );

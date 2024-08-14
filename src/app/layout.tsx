@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 
 import { RootLayoutProps } from "@/@types/root-layout";
 import { Navbar } from "@/components/navbar";
+import { Providers } from "@/providers";
 import { generateSEO } from "@/utils/generate-seo";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -15,11 +16,13 @@ export default function RootLayout(props: RootLayoutProps) {
   const { children } = props;
 
   return (
-    <html lang="pt-BR">
-      <body className={`bg-white text-placeholder ${poppins.className}`}>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <Providers>
+      <html lang="pt-BR">
+        <body className={`bg-white text-placeholder ${poppins.className}`}>
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </Providers>
   );
 }

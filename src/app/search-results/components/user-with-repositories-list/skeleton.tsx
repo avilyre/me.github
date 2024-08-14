@@ -1,4 +1,4 @@
-export default function Loading() {
+export const Skeleton = () => {
   return (
     <div className="grid grid-cols-[448px_1fr] gap-12 p-6">
       <div>
@@ -21,4 +21,4 @@ export default function Loading() {
       </div>
     </div>
   );
-}
+};

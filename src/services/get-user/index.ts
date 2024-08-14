@@ -8,7 +8,7 @@ export const getUser = async (userQuery: string): Promise<GetUserResponse> => {
       `https://api.github.com/users/${userQuery}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
         },
       },
     );
